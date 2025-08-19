@@ -9,7 +9,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());   // ✅ this alone is enough
 
-// Routes
+app.use(
+  cors({
+    origin: "*", // Allow all origins (for testing)
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 app.use('/subjects', SubjectRoutes);
 
 const PORT = process.env.PORT || 5000;
