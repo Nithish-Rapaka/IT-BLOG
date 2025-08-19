@@ -10,7 +10,7 @@ const AdminTheory = () => {
   const [newLabel, setNewLabel] = useState("");
   const [newText, setNewText] = useState("");
 
-  const API_BASE = "http://localhost:5000/subjects"; // backend base URL
+  const API_BASE = "https://sir-blog-backend.onrender.com/subjects"; // backend base URL
   const type = "Theory"; // type for all operations
 
   // Fetch all theory subjects on component mount
