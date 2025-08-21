@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <div className="bg-blue-100">
       <Routes>
         <Route path="/AdminDashboard" element={<AdminDashboard/>} />
         <Route path="/AdminTheory" element={<AdminTheory/>}/>
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Content" element={<Content />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+       </div>
       <Footer />
     </>
   )

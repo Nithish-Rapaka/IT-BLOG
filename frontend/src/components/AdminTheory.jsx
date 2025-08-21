@@ -10,10 +10,10 @@ const AdminTheory = () => {
   const [newLabel, setNewLabel] = useState("");
   const [newText, setNewText] = useState("");
 
-  const API_BASE = "https://sir-blog-backend.onrender.com/subjects"; // backend base URL
-  const type = "Theory"; // type for all operations
+  const API_BASE = "http://localhost:5000/subjects"; 
+  const type = "Theory"; 
 
-  // Fetch all theory subjects on component mount
+  
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
@@ -27,7 +27,7 @@ const AdminTheory = () => {
     fetchSubjects();
   }, []);
 
-  // Add new subject
+  
   const AddSubject = async () => {
     if (!newSubject.trim()) return alert("Enter a subject");
     try {
@@ -47,7 +47,7 @@ const AdminTheory = () => {
     }
   };
 
-  // Delete subject
+
   const DeleteSubject = async (subName) => {
     try {
       const res = await fetch(`${API_BASE}/theory/${subName}`, {
@@ -63,7 +63,7 @@ const AdminTheory = () => {
     }
   };
 
-  // Add or update text for a subject
+  
   const AddText = async () => {
     if (!subject) return alert("Select a subject first");
     if (!newText.trim()) return alert("Enter some text");
@@ -84,7 +84,7 @@ const AdminTheory = () => {
     }
   };
 
-  // Add a link to a subject
+  
   const AddLink = async () => {
     if (!subject) return alert("Select a subject first");
     if (!newLink.trim() || !newLabel.trim()) return alert("Enter both link and label");
@@ -107,7 +107,7 @@ const AdminTheory = () => {
     }
   };
 
-  // Delete a link from a subject
+  
   const DeleteLink = async (subName, url) => {
     try {
       const res = await fetch(`${API_BASE}/${type}/${subName}/links/delete`, {
@@ -125,7 +125,6 @@ const AdminTheory = () => {
     }
   };
 
-  // Icons for subjects
   const subjectLogos = {
     Java: <FaJava className="text-red-600 text-2xl" />,
     "Cloud-computing": <FaCloud className="text-blue-500 text-2xl" />,
