@@ -42,12 +42,12 @@ const Login = () => {
 
           <div className="mb-6">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-3">
-              Email address
+              ID
             </label>
             <input
               type="email"
               id="email"
-              placeholder="name@example.com"
+              placeholder="Enter Your Admin Id"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:border-blue-600 transition"
